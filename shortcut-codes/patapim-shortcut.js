@@ -18,4 +18,4 @@ let F = function (f) {
         }
     };
 };
-completion(F(2));
+completion(Y(F)(2));
