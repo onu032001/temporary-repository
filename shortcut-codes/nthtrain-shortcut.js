@@ -1,4 +1,4 @@
-Y = function (f) {
+let Y = function (f) {
     return (function (x) {
         return f(function (t) {
             return x(x)(t);
@@ -9,7 +9,7 @@ Y = function (f) {
         });
     });
 };
-nthtrain_maker = function (maker) {
+let nthtrain_maker = function (maker) {
     return function (index) {
         return function (max) {
             if (index >= max) {
@@ -20,5 +20,4 @@ nthtrain_maker = function (maker) {
         };
     };
 };
-nthtrain = Y(nthtrain_maker);
-completion(nthtrain(1)(9));
+completion(Y(nthtrain_maker)(1)(9));
