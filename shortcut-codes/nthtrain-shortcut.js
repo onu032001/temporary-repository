@@ -13,11 +13,12 @@ let nthtrain_maker = function (maker) {
     return function (index) {
         return function (max) {
             if (index >= max) {
-                return String(max) + '호선';
+                return 'Train #' + String(max);
             } else {
-                return String(index) + '호선\n' + maker(index-1)(max);
+                return 'Train #' + String(index) + '\n' + maker(index+1)(max);
             }
         };
     };
 };
-completion(Y(nthtrain_maker)(1)(9));
+let nthtrain = Y(nthtrain_maker);
+completion(nthtrain(1)(9));
