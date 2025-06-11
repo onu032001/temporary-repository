@@ -6,3 +6,4 @@ function addHandwriting() {
     handwritingStyle.innerHTML = ':not(math, math *) {font-family: \'NanumJarHaGoIssEo\'';
     document.head.append(handwritingLink, handwritingStyle);
 }
+addHandwriting();
